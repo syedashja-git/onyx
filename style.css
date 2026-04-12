@@ -1,0 +1,397 @@
+/* Color Palette - Updated to match logo theme */
+:root {
+    /* Main colors from the logo */
+    --logo-dark-blue: #163363;
+    --logo-cyan: #55BEC2;
+    --logo-orange: #FF9D2E;
+
+    /* Base page colors */
+    --light-blue-bg: #D4EBF9; /* A lightened sky blue for the main background */
+    --text-color: #333;
+    --white: #ffffff;
+}
+
+/* Reset and Basic Page Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+    scroll-behavior: smooth; /* Smooth scrolling for nav links */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header / Navigation --- */
+.header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.navbar {
+    height: 100px; /* Isay 80 se barha kar 100 kar diya */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ 
+/* --- LOGO SIZE FIX --- */
+/* --- LOGO SIZE FIX --- */
+.logo-container {
+    display: flex;
+    align-items: center;
+    max-width: 320px; /* Container mazeed bara kar diya */
+}
+
+.logo-image {
+    max-height: 85px; /* Pehle 70 tha, ab 85px kar diya */
+    width: auto;
+    display: block;
+}
+
+/* --- Nav Links with Theme Colors --- */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Spacing between links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--logo-dark-blue); /* Text color is dark blue from logo */
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover:not(.btn-orange) {
+    color: var(--logo-cyan); /* Hover effect using logo cyan */
+}
+
+/* Theme Button styling */
+.btn-cta {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-orange {
+    background-color: var(--logo-orange); /* Main button color is orange from logo */
+    color: var(--white) !important; /* Forces white text on orange */
+}
+
+.btn-orange:hover {
+    background-color: #e68a1a; /* Darker orange hover */
+}
+
+/* --- Main Sections --- */
+main {
+    margin-top: 80px; /* Important offset for the fixed header */
+}
+
+/* Content placeholder spacing and style */
+.content-section {
+    padding: 100px 0;
+}
+
+.about-section {
+    background-color: var(--light-blue-bg); /* Use light blue theme here */
+    color: var(--logo-dark-blue);
+}
+
+.content-section h2 {
+    font-size: 32px;
+    color: var(--logo-dark-blue);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.content-section p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* --- Hero Section with Background and Dark Blur --- */
+.hero-section {
+    background-color: var(--light-blue-bg);
+    /* Add your preferred background image URL here and a dark overlay */
+    background-image: linear-gradient(135deg, rgba(22, 51, 99, 0.8) 0%, rgba(22, 51, 99, 0.5) 100%),
+                      url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1470&auto=format&fit=crop'); /* Example construction image */
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 80px); /* Full height minus nav */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.hero-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+}
+
+/* --- Basic Services Grid Styling --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-item {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    border-top: 5px solid var(--logo-cyan);
+}
+
+.service-item h3 {
+    margin: 15px 0;
+    color: var(--logo-dark-blue);
+}
+
+.placeholder-icon {
+    width: 60px;
+    height: 60px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+}
+
+/* --- Footer Patti and Alignment --- */
+.footer-patti {
+    background-color: var(--logo-orange);
+    padding: 25px 0; /* Thori padding barhai hai taake patti narrow na lage */
+    width: 100%;
+}
+
+.footer-row {
+    display: flex;
+    justify-content: center; /* Poore group ko center karega */
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Is section mein humne gap aur width set ki hai */
+.contact-box {
+    display: flex;
+    justify-content: center; /* Teeno items ko center karega */
+    align-items: center;
+    gap: 60px; /* Address, Phone aur Email ke darmiyan barabar fasla */
+    width: 100%; /* Taake ye poori patti ki width use kare */
+}
+
+.info-pill {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--white);
+    font-weight: 600; /* Text thora bold kiya hai taake saaf parha jaye */
+    font-size: 15px;
+}
+
+/* Icons ko thora highlight karne ke liye */
+.info-pill i {
+    font-size: 20px;
+    color: var(--logo-dark-blue); /* Orange par dark blue icons best lagte hain */
+}
+
+/* Mobile Responsive: Jab screen choti ho to ek ke niche ek aa jayen */
+@media (max-width: 768px) {
+    .contact-box {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+/* --- Bottom Copyright Patti --- */
+.footer-bottom-bar {
+    background-color: var(--logo-dark-blue); /* Dark Blue Background Patti */
+    padding: 15px 0;                        /* Patti ki height set karne ke liye */
+    width: 100%;
+    display: flex;
+    justify-content: center;                /* Text ko perfectly center karne ke liye */
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Halka sa border */
+}
+
+.footer-bottom-bar p {
+    color: var(--logo-orange);             /* Text color Orange (jaisa upper strip ka hai) */
+    font-size: 14px;
+    margin: 0;
+    text-align: center;
+    font-weight: 600;                      /* Thora bold taake dark blue par clear nazar aaye */
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   MOBILE & TABLET RESPONSIVE STYLES
+   ========================================== */
+
+/* 1. Tablets aur Chote Laptops ke liye (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 30px;
+    }
+}
+
+/* 2. Mobile Phones ke liye (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Navbar ko adjust karna taake logo aur buttons fit ayen */
+    .navbar {
+        height: auto;
+        padding: 20px 0;
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    .logo-container {
+        max-width: 250px; /* Mobile par logo thora manage-able size mein */
+    }
+
+    .logo-image {
+        max-height: 60px; 
+    }
+
+    .nav-links {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Fixed header ki wajah se main content ka gap barhana */
+    main {
+        margin-top: 160px; 
+    }
+
+    /* Text sizes choti screen ke liye */
+    .hero-content h1 {
+        font-size: 30px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    /* Services ke dabbaun ko ek line mein karna */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Orange Patti (Contact Info) Fix */
+    .contact-box {
+        flex-direction: column;
+        gap: 15px !important;
+    }
+
+    .info-pill {
+        justify-content: center;
+    }
+}
+
+/* --- Premium Dotted Loader Styling --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* White Page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease;
+}
+
+.dotted-spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px dotted var(--logo-orange); /* Orange Dotted Circle */
+    border-top: 5px solid transparent;    /* Is se animation smooth lagti hai */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Website Fade-In Transition --- */
+#page-content {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.content-hidden {
+    opacity: 0 !important; /* Shuru mein bilkul gayab */
+}
+
+/* --- Global Fade-In Animation --- */
+@keyframes fadeInPage {
+    0% {
+        opacity: 0;
+        transform: translateY(15px); /* Halka sa niche se shuru hoga */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Apni asli jagah par aa jayega */
+    }
+}
+
+/* Ye class aapke main content wrapper par lagegi */
+.fade-in-element {
+    animation: fadeInPage 0.8s ease-out forwards;
+}
+
+/* --- Scroll Reveal Animation --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* Jab scroll wahan pahuchega, ye class active hogi */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
